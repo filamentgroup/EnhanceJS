@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>enhancejs Test Suite</title>
+        <script src="../../../enhance.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" charset="utf-8">
+            window.onload = function() {
+                var parent = window.parent;
+                parent.iframeLoaded && parent.iframeLoaded(window, document, enhance);
+            };
+        </script>
+    </head>
+    <body></body>
+</html>

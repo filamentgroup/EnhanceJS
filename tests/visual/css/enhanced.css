@@ -1,0 +1,6 @@
+#toggleContain { width: 500px; margin: 1em auto; overflow: hidden; text-align: center; }
+
+.enhanced_toggleResult,
+.mobiledesktoptoggle { display: inline-block; width: 165px; margin: 0 5px; background: #fff; font-weight: bold; border: 1px solid #aaa; text-align: center; text-decoration: none; padding: .5em 5px; font-size: 11px; color: #333;  }
+.enhanced_toggleResult:hover,
+.mobiledesktoptoggle:hover { text-decoration: underline; }

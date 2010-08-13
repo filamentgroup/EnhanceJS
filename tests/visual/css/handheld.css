@@ -1,0 +1,4 @@
+body { background: blue; }
+h1#enhanceMsg { margin: 10px 0; color: #fff; font-size: 80px; font-weight: bold; }
+a { color: #fff; }
+html.enhanced body { visibility: visible; }
