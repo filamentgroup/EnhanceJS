@@ -164,7 +164,7 @@ enhance.defaultSettings = {
     tests: enhance.defaultTests,
     media: {
     	'-ejs-desktop': enhance.query('screen and (max-device-width: 1024px)') ? 'not screen and (max-device-width: 1024px)' : 'screen',
-    	'-ejs-portable': 'screen and (max-device-width: 1024px)'
+    	'-ejs-handheld': 'screen and (max-device-width: 1024px)'
     },
     addTests: {},
     alertOnFailure: false,
