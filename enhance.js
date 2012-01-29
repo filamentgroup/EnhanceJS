@@ -11,8 +11,11 @@ var settings, body, fakeBody, windowLoaded, head,
 	mediaCookieA, mediaCookieB, 
 	toggledMedia = [];
 	
-if(doc.getElementsByTagName){ head = doc.getElementsByTagName('head')[0] || docElem; }
-else{ head = docElem; }
+if(doc.getElementsByTagName){ 
+	head = doc.getElementsByTagName('head')[0] || docElem; 
+}else{ 
+	head = docElem; 
+	}
 
 //test whether a media query applies
 var mediaquery = (function(){
@@ -65,7 +68,7 @@ win.enhance = function(options) {
     //fallback for removing testName class
     setTimeout(function(){ if(!testPass){ removeHTMLClass(); } }, 3000);
 
-    runTests();
+    setTimeout(runTests,50);
     
     applyDocReadyHack();
     
@@ -174,8 +177,20 @@ enhance.defaultSettings = {
     onScriptsLoaded: function(){}
 };
 
+//original by The Filament Group
+// This snippet does not register 
+// toggle link upon intial visit
 function cookiesSupported(){
 	return !!doc.cookie;
+}
+enhance.cookiesSupported = cookiesSupported();
+
+//modification - unappending toggle link on initial visit 
+//http://code.google.com/p/enhancejs/issues/attachmentText?id=15&aid=150005000&name=enhance_mod.js&token=df_YNi6aFsT5AQBOo9rhPovdAfE%3A1326870453021 
+//http://code.google.com/p/enhancejs/issues/detail?id=15
+function cookiesSupported(){
+        if(doc.cookie == ''){createCookie('empty', 'empty')};
+        return !!doc.cookie;
 }
 enhance.cookiesSupported = cookiesSupported();
 
@@ -302,7 +317,7 @@ function enhancePage() {
 
 //media toggling methods and storage
 function toggleMedia(mediaA,mediaB){
-	if(readCookie(mediaCookieA) && readCookie(mediaCookieB)){
+	if(readCookie(mediaCookieA) && readCookie(mediaCookieA) == mediaA && readCookie(mediaCookieB) && readCookie(mediaCookieA) == mediaA){
 		eraseCookie(mediaCookieA);
 		eraseCookie(mediaCookieB);
 	}
