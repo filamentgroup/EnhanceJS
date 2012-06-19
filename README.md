@@ -1,3 +1,5 @@
+NOTE: We've started a new version of Enhance that we'd recommend potentially using instead. Check it out here: https://github.com/filamentgroup/enhance
+
 ![EnhanceJS: Test-Driven Progressive Enhancement](http://filamentgroup.com/images/ejslogo.png)
 
 ## Demos & Tests: 
